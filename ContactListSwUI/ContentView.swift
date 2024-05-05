@@ -1,21 +1,11 @@
-//
-//  ContentView.swift
-//  ContactListSwUI
-//
-//  Created by Valentin on 05.05.2024.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    
+    private let contactList = Person.getContactList()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        ContactListView(persons: contactList)
     }
 }
 

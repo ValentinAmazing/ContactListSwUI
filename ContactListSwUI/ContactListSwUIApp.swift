@@ -1,10 +1,3 @@
-//
-//  ContactListSwUIApp.swift
-//  ContactListSwUI
-//
-//  Created by Valentin on 05.05.2024.
-//
-
 import SwiftUI
 
 @main
