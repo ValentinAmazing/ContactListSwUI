@@ -5,14 +5,16 @@ struct NumberListView: View {
     let persons: [Person]
         
     var body: some View {
-        List {
-            ForEach(persons, id: \.phoneNumber) { person in
-                 Section(header: Text(person.fullName)) {
-                     PersDataView(person: person)
-                 }
-             }
-         }
-        .navigationTitle(title)
+        NavigationStack{
+            List {
+                ForEach(persons, id: \.phoneNumber) { person in
+                    Section(header: Text(person.fullName)) {
+                        PersDataView(person: person)
+                    }
+                }
+            }
+            .navigationTitle(title)
+        }
     }
 }
 
