@@ -9,8 +9,7 @@ struct PersonDetailsView: View {
             Image(systemName: "person.fill")
                 .resizable()
                 .frame(width: 200, height: 200)
-            PersData(icon: "phone", persData: person?.phoneNumber)
-            PersData(icon: "envelope", persData: person?.email)
+            PersDataView(person: person)
         }
         .listStyle(.plain)
         .navigationTitle(person?.fullName ?? "no name")
@@ -21,17 +20,4 @@ struct PersonDetailsView: View {
     PersonDetailsView(
         person: Person.getContactList().first
     )
-}
-
-struct PersData: View {
-    let icon: String
-    let persData: String?
-    
-    var body: some View {
-        HStack {
-            Image(systemName: icon)
-            Text(persData ?? "no data")
-        }
-        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-    }
 }

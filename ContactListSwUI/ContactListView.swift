@@ -1,9 +1,8 @@
 import SwiftUI
 
 struct ContactListView: View {
+    let title: String
     let persons: [Person]
-
-    private let title = "Contact List"
 
     var body: some View {
         NavigationStack{
@@ -21,6 +20,7 @@ struct ContactListView: View {
 
 #Preview {
     ContactListView(
+        title: "Title",
         persons: Person.getContactList()
     )
 }
