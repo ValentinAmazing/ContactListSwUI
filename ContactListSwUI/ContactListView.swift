@@ -6,11 +6,15 @@ struct ContactListView: View {
     private let title = "Contact List"
 
     var body: some View {
-        List(persons, id: \.phoneNumber) {
-            Text($0.fullName)
+        NavigationStack{
+            List(persons, id: \.phoneNumber) {
+                NavigationLink(
+                    $0.fullName,
+                    destination: PersonDetailsView(person: $0))
+            }
+            .listStyle(.plain)
+            .navigationTitle(title)
         }
-        .listStyle(.plain)
-        .navigationTitle(title)
     }
     
 }

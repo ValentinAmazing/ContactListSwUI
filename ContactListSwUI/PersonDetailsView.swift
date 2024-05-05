@@ -13,6 +13,7 @@ struct PersonDetailsView: View {
             PersData(icon: "envelope", persData: person?.email)
         }
         .listStyle(.plain)
+        .navigationTitle(person?.fullName ?? "no name")
     }
 }
 
